@@ -16,7 +16,8 @@ import { resumeData } from '../data/resume';
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
     <!-- Column 1: Education -->
-    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5 shadow-sm transition-colors">
+    <div class="relative overflow-hidden bg-white/90 dark:bg-[#181b25]/90 border border-slate-200 dark:border-[#1F2937] rounded-xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5 shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-[0_0_25px_-5px_rgba(128,131,255,0.2)] transition-all hover:-translate-y-1 hover:border-indigo-400 dark:hover:border-[#8083ff] duration-300 group backdrop-blur-sm">
+      <div class="absolute inset-x-0 -top-px h-[2px] bg-gradient-to-r from-transparent via-indigo-500 dark:via-[#8083ff] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
       <div class="flex items-center gap-2 border-b border-slate-200 dark:border-[#1F2937]/60 pb-2">
         <span class="material-symbols-outlined text-indigo-600 dark:text-[#c0c1ff] text-[18px] sm:text-[20px]">school</span>
         <h3 class="text-base sm:text-[18px] text-slate-900 dark:text-[#dfe2ef] font-semibold">
@@ -55,7 +56,8 @@ import { resumeData } from '../data/resume';
     </div>
 
     <!-- Column 2: Certifications -->
-    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5 shadow-sm transition-colors">
+    <div class="relative overflow-hidden bg-white/90 dark:bg-[#181b25]/90 border border-slate-200 dark:border-[#1F2937] rounded-xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5 shadow-sm hover:shadow-xl hover:shadow-emerald-500/10 dark:hover:shadow-[0_0_25px_-5px_rgba(78,222,163,0.2)] transition-all hover:-translate-y-1 hover:border-emerald-400 dark:hover:border-[#4edea3] duration-300 group backdrop-blur-sm">
+      <div class="absolute inset-x-0 -top-px h-[2px] bg-gradient-to-r from-transparent via-emerald-500 dark:via-[#4edea3] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
       <div class="flex items-center gap-2 border-b border-slate-200 dark:border-[#1F2937]/60 pb-2">
         <span class="material-symbols-outlined text-emerald-600 dark:text-[#4edea3] text-[18px] sm:text-[20px]">workspace_premium</span>
         <h3 class="text-base sm:text-[18px] text-slate-900 dark:text-[#dfe2ef] font-semibold">
@@ -64,7 +66,7 @@ import { resumeData } from '../data/resume';
       </div>
       <div class="flex flex-col gap-3 sm:gap-4">
         {resumeData.certifications.map((cert) => (
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 bg-slate-50 dark:bg-[#1c1f29] rounded-lg border border-slate-200 dark:border-[#1F2937] transition-colors">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 bg-slate-50 dark:bg-[#1c1f29] rounded-lg border border-slate-200 dark:border-[#1F2937] hover:border-emerald-400/50 dark:hover:border-[#4edea3]/40 transition-colors">
             <div class="flex flex-col">
               <span class="font-mono text-[10px] sm:text-[11px] font-semibold text-emerald-600 dark:text-[#4edea3] uppercase">
                 {cert.tag}

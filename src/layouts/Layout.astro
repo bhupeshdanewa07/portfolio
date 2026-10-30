@@ -71,12 +71,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       rel="stylesheet"
     />
   </head>
-  <body class="bg-slate-50 dark:bg-[#090D16] text-slate-800 dark:text-[#dfe2ef] antialiased selection:bg-indigo-600 selection:text-white dark:selection:bg-[#6366F1] dark:selection:text-white min-h-screen flex flex-col font-sans transition-colors duration-200 w-full overflow-x-hidden">
+  <body class="bg-slate-50 dark:bg-[#090D16] text-slate-800 dark:text-[#dfe2ef] antialiased selection:bg-indigo-600 selection:text-white dark:selection:bg-[#6366F1] dark:selection:text-white min-h-screen flex flex-col font-sans transition-colors duration-200 w-full overflow-x-hidden relative">
+    <!-- Ambient Engineering Dot-Grid Canvas & Radial Glow -->
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0 bg-dot-grid opacity-75 dark:opacity-35"></div>
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] h-[400px] bg-gradient-to-b from-indigo-500/15 via-sky-500/10 to-transparent blur-3xl rounded-full dark:from-indigo-600/20 dark:via-purple-600/10 dark:to-transparent"></div>
+    </div>
     <slot />
   </body>
 </html>
 
 <style is:global>
+  /* Dot-Grid Blueprint Matrix */
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(100, 116, 139, 0.22) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  html.dark .bg-dot-grid {
+    background-image: radial-gradient(rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 6px;

@@ -17,7 +17,10 @@ import { resumeData } from '../data/resume';
     {resumeData.experience.map((exp) => {
       const isCurrent = exp.dates.includes("Present");
       return (
-        <div class="relative flex flex-col gap-2 bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-4 sm:p-6 transition-all hover:-translate-y-0.5 hover:border-slate-300 dark:hover:border-[#464554] duration-150 shadow-sm group">
+        <div class="relative overflow-hidden flex flex-col gap-2 bg-white/90 dark:bg-[#181b25]/90 border border-slate-200 dark:border-[#1F2937] rounded-xl p-4 sm:p-6 transition-all hover:-translate-y-1 hover:border-indigo-400 dark:hover:border-[#8083ff] duration-300 shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-[0_0_25px_-5px_rgba(128,131,255,0.2)] group backdrop-blur-sm">
+          <!-- Top Border Illuminating Glow Accent -->
+          <div class="absolute inset-x-0 -top-px h-[2px] bg-gradient-to-r from-transparent via-indigo-500 dark:via-[#8083ff] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
           <!-- Timeline Indicator Dot -->
           <div
             class={`absolute -left-[23px] sm:-left-[39px] top-6 w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full border-2 border-slate-50 dark:border-[#0a0e17] ${
