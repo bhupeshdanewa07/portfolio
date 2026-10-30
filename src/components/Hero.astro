@@ -83,13 +83,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div class="flex flex-wrap gap-2">
           {resumeData.personal.coreDomainPills.map((domain) => {
             const isAgentic = domain.includes("Agentic");
-            const isAdas = domain.includes("Autonomous");
+            const isGenerative = domain.includes("Generative");
             return (
               <span
                 class={`px-3 py-1 bg-white dark:bg-[#1c1f29] border rounded font-mono text-[11px] font-semibold tracking-wide transition-colors ${
                   isAgentic
                     ? "border-emerald-200 dark:border-[#00a572]/40 text-emerald-600 dark:text-[#4edea3]"
-                    : isAdas
+                    : isGenerative
                     ? "border-sky-200 dark:border-[#009bd1]/40 text-sky-600 dark:text-[#7bd0ff]"
                     : "border-slate-200 dark:border-[#1F2937] text-indigo-600 dark:text-[#c0c1ff]"
                 }`}
