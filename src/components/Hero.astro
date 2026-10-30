@@ -1,0 +1,135 @@
+---
+import { resumeData } from '../data/resume';
+---
+
+<section class="flex flex-col gap-6 pt-4 border-b border-slate-200 dark:border-[#1F2937]/80 pb-10 transition-colors duration-200">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+    <!-- Left Content Column (7 cols on lg) -->
+    <div class="lg:col-span-7 flex flex-col gap-5">
+      <!-- Live Status Badge -->
+      <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded bg-emerald-50 dark:bg-[#181b25] border border-emerald-200 dark:border-[#1F2937] transition-colors">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 dark:bg-[#10B981] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600 dark:bg-[#10B981]"></span>
+        </span>
+        <span class="font-mono text-[11px] font-semibold text-emerald-700 dark:text-[#10B981] tracking-wider uppercase">
+          M.Tech in Artificial Intelligence @ MANIT Bhopal
+        </span>
+      </div>
+
+      <!-- Main Headline & Subtitle -->
+      <div class="flex flex-col gap-2">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold text-slate-900 dark:text-[#dfe2ef] tracking-tight leading-tight">
+          {resumeData.personal.name}
+          <span class="text-indigo-600 dark:text-[#c0c1ff]"> — </span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-indigo-500 to-sky-600 dark:from-[#dfe2ef] dark:via-[#c0c1ff] dark:to-[#8083ff]">
+            AI Engineer & Data Scientist
+          </span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-600 dark:text-[#908fa0] max-w-2xl leading-relaxed mt-1 font-normal">
+          {resumeData.personal.subHeadline}
+        </p>
+      </div>
+
+      <!-- Telemetry Info Bar -->
+      <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-slate-600 dark:text-[#c7c4d7] font-mono text-[13px] py-1">
+        <span class="inline-flex items-center gap-1.5 text-slate-900 dark:text-[#dfe2ef] font-medium">
+          <span class="material-symbols-outlined text-[16px] text-indigo-600 dark:text-[#c0c1ff]">location_on</span>
+          {resumeData.personal.location}
+        </span>
+        <span class="text-slate-300 dark:text-[#464554]">|</span>
+        <a
+          href={resumeData.personal.phone.href}
+          class="inline-flex items-center gap-1.5 hover:text-indigo-600 dark:hover:text-[#c0c1ff] transition-colors"
+        >
+          <span class="material-symbols-outlined text-[16px] text-indigo-600 dark:text-[#c0c1ff]">call</span>
+          {resumeData.personal.phone.display}
+        </a>
+        <span class="text-slate-300 dark:text-[#464554]">|</span>
+        <a
+          href={resumeData.personal.email.href}
+          class="inline-flex items-center gap-1.5 hover:text-indigo-600 dark:hover:text-[#c0c1ff] transition-colors"
+        >
+          <span class="material-symbols-outlined text-[16px] text-indigo-600 dark:text-[#c0c1ff]">mail</span>
+          {resumeData.personal.email.display}
+        </a>
+      </div>
+
+      <!-- Hero Actions -->
+      <div class="flex flex-wrap items-center gap-4 pt-1">
+        <a
+          href={resumeData.personal.email.href}
+          class="px-5 py-2.5 rounded-lg bg-indigo-600 dark:bg-[#8083ff] text-white dark:text-[#0d0096] font-mono text-[13px] font-semibold hover:bg-indigo-700 dark:hover:bg-[#c0c1ff] transition-all shadow-sm inline-flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-[16px]">send</span>
+          Get In Touch
+        </a>
+        <a
+          href="#projects"
+          class="px-5 py-2.5 rounded-lg border border-slate-300 dark:border-[#1F2937] text-slate-800 dark:text-[#dfe2ef] font-mono text-[13px] font-medium hover:bg-slate-100 dark:hover:bg-[#1c1f29] hover:border-slate-400 dark:hover:border-[#464554] transition-colors inline-flex items-center gap-2 shadow-sm"
+        >
+          <span class="material-symbols-outlined text-[16px]">terminal</span>
+          View Research & Work
+        </a>
+      </div>
+
+      <!-- Core Domain Pills -->
+      <div class="pt-2 flex flex-col gap-2">
+        <span class="font-mono text-[11px] font-semibold text-slate-500 dark:text-[#908fa0] uppercase tracking-wider">
+          Core Engineering Domains
+        </span>
+        <div class="flex flex-wrap gap-2">
+          {resumeData.personal.coreDomainPills.map((domain) => {
+            const isAgentic = domain.includes("Agentic");
+            const isAdas = domain.includes("Autonomous");
+            return (
+              <span
+                class={`px-3 py-1 bg-white dark:bg-[#1c1f29] border rounded font-mono text-[11px] font-semibold tracking-wide transition-colors ${
+                  isAgentic
+                    ? "border-emerald-200 dark:border-[#00a572]/40 text-emerald-600 dark:text-[#4edea3]"
+                    : isAdas
+                    ? "border-sky-200 dark:border-[#009bd1]/40 text-sky-600 dark:text-[#7bd0ff]"
+                    : "border-slate-200 dark:border-[#1F2937] text-indigo-600 dark:text-[#c0c1ff]"
+                }`}
+              >
+                {domain}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Framed Hero Portrait (5 cols on lg) -->
+    <div class="lg:col-span-5 flex justify-center lg:justify-end">
+      <div class="relative w-full max-w-[340px] sm:max-w-[380px]">
+        <!-- Ambient Glow Backdrop -->
+        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500/30 via-emerald-500/20 to-sky-500/30 dark:from-[#8083ff]/30 dark:via-[#4edea3]/20 dark:to-[#7bd0ff]/20 blur-xl opacity-75 pointer-events-none"></div>
+
+        <!-- Outer Tech Card Container -->
+        <div class="relative rounded-2xl bg-white dark:bg-[#181b25] border border-slate-200/90 dark:border-[#1F2937] p-2.5 sm:p-3 shadow-xl backdrop-blur-sm transition-colors duration-200">
+          <!-- Portrait Image Container -->
+          <div class="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-slate-200/60 dark:border-[#1F2937]/50 bg-slate-100 dark:bg-[#0a0e17]">
+            <img
+              src="/portrait.jpg"
+              alt={`${resumeData.personal.name} — AI Engineer & Data Scientist`}
+              class="h-full w-full object-cover object-top hover:scale-[1.02] transition-transform duration-300"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Card Bottom Bar: Quick Spec Indicator -->
+          <div class="mt-2.5 pt-2 border-t border-slate-100 dark:border-[#1F2937]/50 flex items-center justify-between px-1">
+            <div class="flex items-center gap-1.5 font-mono text-[11px] text-slate-500 dark:text-[#908fa0]">
+              <span class="material-symbols-outlined text-[14px] text-indigo-500 dark:text-[#c0c1ff]">terminal</span>
+              <span>bhupeshdanewa07</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-indigo-50 dark:bg-[#8083ff]/10 text-indigo-700 dark:text-[#c0c1ff] border border-indigo-200/60 dark:border-[#8083ff]/20 font-mono text-[10px] uppercase font-bold tracking-wider">
+              Full-Stack AI
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

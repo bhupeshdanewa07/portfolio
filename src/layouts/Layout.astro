@@ -1,0 +1,108 @@
+---
+import { resumeData } from '../data/resume';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${resumeData.personal.name} — AI Engineer & Data Scientist`,
+  description = resumeData.personal.subHeadline,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={resumeData.personal.name} />
+    <meta name="keywords" content="Bhupesh Danewa, AI Engineer, Data Scientist, Machine Learning, Deep Learning, Agentic RAG, LLM, M.Tech AI" />
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bhupeshdanewa.dev" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Theme Initialization (Zero-FOUC) -->
+    <script is:inline>
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          if (stored === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else if (stored === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
+    <!-- Google Fonts Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-slate-50 dark:bg-[#090D16] text-slate-800 dark:text-[#dfe2ef] antialiased selection:bg-indigo-600 selection:text-white dark:selection:bg-[#6366F1] dark:selection:text-white min-h-screen flex flex-col font-sans transition-colors duration-200">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090D16;
+  }
+  html:not(.dark) ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1F2937;
+    border-radius: 3px;
+  }
+  html:not(.dark) ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+  }
+  html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    vertical-align: middle;
+    line-height: 1;
+  }
+</style>

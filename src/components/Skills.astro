@@ -1,0 +1,74 @@
+---
+import { resumeData } from '../data/resume';
+
+const { languages, developerTools, technologiesAndFrameworks } = resumeData.skills;
+---
+
+<section class="flex flex-col gap-6" id="skills">
+  <!-- Section Header -->
+  <div class="flex items-center justify-between border-b border-slate-200 dark:border-[#1F2937]/80 pb-3 transition-colors">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-indigo-600 dark:text-[#c0c1ff] text-[22px]">terminal</span>
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-[#dfe2ef] tracking-tight">
+        Technical Skills
+      </h2>
+    </div>
+    <span class="font-mono text-[13px] text-slate-500 dark:text-[#908fa0]">stack_telemetry</span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <!-- Category 1: Languages -->
+    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-5 md:p-6 flex flex-col gap-4 shadow-sm transition-colors">
+      <div class="flex items-center gap-2 text-indigo-600 dark:text-[#c0c1ff] border-b border-slate-200 dark:border-[#1F2937]/60 pb-2">
+        <span class="material-symbols-outlined text-[18px]">code</span>
+        <h3 class="text-[17px] text-slate-900 dark:text-[#dfe2ef] font-semibold">Languages</h3>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {languages.map((skill) => (
+          <span class="px-2.5 py-1 bg-slate-100 dark:bg-[#1c1f29] border border-slate-200 dark:border-[#1F2937] rounded font-mono text-[13px] text-slate-800 dark:text-[#dfe2ef] hover:border-slate-400 dark:hover:border-[#464554] transition-colors">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Category 2: Developer Tools -->
+    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-5 md:p-6 flex flex-col gap-4 shadow-sm transition-colors">
+      <div class="flex items-center gap-2 text-indigo-600 dark:text-[#c0c1ff] border-b border-slate-200 dark:border-[#1F2937]/60 pb-2">
+        <span class="material-symbols-outlined text-[18px]">build</span>
+        <h3 class="text-[17px] text-slate-900 dark:text-[#dfe2ef] font-semibold">Developer Tools</h3>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {developerTools.map((skill) => (
+          <span class="px-2.5 py-1 bg-slate-100 dark:bg-[#1c1f29] border border-slate-200 dark:border-[#1F2937] rounded font-mono text-[13px] text-slate-800 dark:text-[#dfe2ef] hover:border-slate-400 dark:hover:border-[#464554] transition-colors">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Category 3: Technologies/Frameworks -->
+    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-5 md:p-6 flex flex-col gap-4 shadow-sm transition-colors">
+      <div class="flex items-center gap-2 text-indigo-600 dark:text-[#c0c1ff] border-b border-slate-200 dark:border-[#1F2937]/60 pb-2">
+        <span class="material-symbols-outlined text-[18px]">memory</span>
+        <h3 class="text-[17px] text-slate-900 dark:text-[#dfe2ef] font-semibold">Technologies & Frameworks</h3>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {technologiesAndFrameworks.map((skill) => {
+          const isHighlight = skill.includes("Learning") || skill.includes("cu") || skill.includes("RAPIDS") || skill.includes("LangChain");
+          return (
+            <span
+              class={`px-2.5 py-1 rounded font-mono text-[13px] transition-colors ${
+                isHighlight
+                  ? "bg-indigo-50/70 dark:bg-[#1c1f29] border border-indigo-200 dark:border-[#8083ff]/40 text-indigo-700 dark:text-[#c0c1ff]"
+                  : "bg-slate-100 dark:bg-[#1c1f29] border border-slate-200 dark:border-[#1F2937] text-slate-800 dark:text-[#dfe2ef] hover:border-slate-400 dark:hover:border-[#464554]"
+              }`}
+            >
+              {skill}
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>

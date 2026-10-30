@@ -1,0 +1,55 @@
+---
+import { resumeData } from '../data/resume';
+---
+
+<footer class="w-full bg-white dark:bg-[#0a0e17] border-t border-slate-200 dark:border-[#1F2937] mt-auto transition-colors duration-200">
+  <div class="max-w-[1200px] mx-auto px-4 md:px-10 py-8 flex flex-col md:flex-row items-center justify-between gap-6 w-full">
+    <!-- Copyright & Contact Line -->
+    <div class="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
+      <span class="font-mono text-[13px] font-bold text-slate-900 dark:text-[#dfe2ef]">
+        © 2026 {resumeData.personal.name.toUpperCase()} // AI.ENG. ALL RIGHTS RESERVED.
+      </span>
+      <p class="text-sm text-slate-500 dark:text-[#908fa0]">
+        {resumeData.personal.name} | {resumeData.personal.location} | {resumeData.personal.phone.display} |
+        <a
+          href={resumeData.personal.email.href}
+          class="text-slate-800 dark:text-[#dfe2ef] hover:text-indigo-600 dark:hover:text-[#c0c1ff] transition-colors ml-1 underline"
+        >
+          {resumeData.personal.email.display}
+        </a>
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="#research"
+        class="text-indigo-600 dark:text-[#4edea3] font-mono text-[11px] uppercase tracking-widest hover:underline transition-colors"
+      >
+        ICCCNT 2025
+      </a>
+      <a
+        href={resumeData.personal.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-slate-500 dark:text-[#908fa0] font-mono text-[11px] uppercase tracking-widest hover:text-indigo-600 dark:hover:text-[#4edea3] transition-colors"
+      >
+        GitHub
+      </a>
+      <a
+        href={resumeData.personal.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-slate-500 dark:text-[#908fa0] font-mono text-[11px] uppercase tracking-widest hover:text-indigo-600 dark:hover:text-[#4edea3] transition-colors"
+      >
+        LinkedIn
+      </a>
+      <a
+        href={resumeData.personal.email.href}
+        class="text-slate-500 dark:text-[#908fa0] font-mono text-[11px] uppercase tracking-widest hover:text-indigo-600 dark:hover:text-[#4edea3] transition-colors"
+      >
+        Email
+      </a>
+    </div>
+  </div>
+</footer>
