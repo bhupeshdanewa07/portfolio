@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="dark scroll-smooth overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,7 +71,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       rel="stylesheet"
     />
   </head>
-  <body class="bg-slate-50 dark:bg-[#090D16] text-slate-800 dark:text-[#dfe2ef] antialiased selection:bg-indigo-600 selection:text-white dark:selection:bg-[#6366F1] dark:selection:text-white min-h-screen flex flex-col font-sans transition-colors duration-200">
+  <body class="bg-slate-50 dark:bg-[#090D16] text-slate-800 dark:text-[#dfe2ef] antialiased selection:bg-indigo-600 selection:text-white dark:selection:bg-[#6366F1] dark:selection:text-white min-h-screen flex flex-col font-sans transition-colors duration-200 w-full overflow-x-hidden">
     <slot />
   </body>
 </html>

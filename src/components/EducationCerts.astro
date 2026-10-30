@@ -6,46 +6,46 @@ import { resumeData } from '../data/resume';
   <!-- Section Header -->
   <div class="flex items-center justify-between border-b border-slate-200 dark:border-[#1F2937]/80 pb-3 transition-colors">
     <div class="flex items-center gap-2">
-      <span class="material-symbols-outlined text-indigo-600 dark:text-[#c0c1ff] text-[22px]">badge</span>
-      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-[#dfe2ef] tracking-tight">
+      <span class="material-symbols-outlined text-indigo-600 dark:text-[#c0c1ff] text-[20px] sm:text-[22px]">badge</span>
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-[#dfe2ef] tracking-tight">
         Education & Certifications
       </h2>
     </div>
-    <span class="font-mono text-[13px] text-slate-500 dark:text-[#908fa0]">accreditation</span>
+    <span class="font-mono text-xs sm:text-[13px] text-slate-500 dark:text-[#908fa0]">accreditation</span>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
     <!-- Column 1: Education -->
-    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-5 md:p-6 flex flex-col gap-5 shadow-sm transition-colors">
+    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5 shadow-sm transition-colors">
       <div class="flex items-center gap-2 border-b border-slate-200 dark:border-[#1F2937]/60 pb-2">
-        <span class="material-symbols-outlined text-indigo-600 dark:text-[#c0c1ff] text-[20px]">school</span>
-        <h3 class="text-[18px] text-slate-900 dark:text-[#dfe2ef] font-semibold">
+        <span class="material-symbols-outlined text-indigo-600 dark:text-[#c0c1ff] text-[18px] sm:text-[20px]">school</span>
+        <h3 class="text-base sm:text-[18px] text-slate-900 dark:text-[#dfe2ef] font-semibold">
           Formal Education
         </h3>
       </div>
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col gap-4 sm:gap-5">
         {resumeData.education.map((edu, idx) => {
           const isPostgrad = idx === 0;
           return (
             <div
-              class={`flex flex-col gap-1 border-l-2 pl-3.5 ${
+              class={`flex flex-col gap-1 border-l-2 pl-3 sm:pl-3.5 ${
                 isPostgrad ? "border-indigo-600 dark:border-[#8083ff]" : "border-slate-300 dark:border-[#1F2937]"
               }`}
             >
               <span
-                class={`font-mono text-[11px] uppercase tracking-wider font-semibold ${
+                class={`font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold ${
                   isPostgrad ? "text-indigo-600 dark:text-[#c0c1ff]" : "text-slate-500 dark:text-[#908fa0]"
                 }`}
               >
                 {edu.levelTag}
               </span>
-              <h4 class="text-base font-semibold text-slate-900 dark:text-[#dfe2ef]">
+              <h4 class="text-sm sm:text-base font-semibold text-slate-900 dark:text-[#dfe2ef]">
                 {edu.degree}
               </h4>
-              <p class="text-sm text-slate-600 dark:text-[#c7c4d7]">
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-[#c7c4d7]">
                 {edu.institution}, {edu.location}
               </p>
-              <span class="font-mono text-[13px] text-slate-500 dark:text-[#908fa0]">
+              <span class="font-mono text-xs sm:text-[13px] text-slate-500 dark:text-[#908fa0]">
                 {edu.dates}
               </span>
             </div>
@@ -55,21 +55,21 @@ import { resumeData } from '../data/resume';
     </div>
 
     <!-- Column 2: Certifications -->
-    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-5 md:p-6 flex flex-col gap-5 shadow-sm transition-colors">
+    <div class="bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] rounded-xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-5 shadow-sm transition-colors">
       <div class="flex items-center gap-2 border-b border-slate-200 dark:border-[#1F2937]/60 pb-2">
-        <span class="material-symbols-outlined text-emerald-600 dark:text-[#4edea3] text-[20px]">workspace_premium</span>
-        <h3 class="text-[18px] text-slate-900 dark:text-[#dfe2ef] font-semibold">
+        <span class="material-symbols-outlined text-emerald-600 dark:text-[#4edea3] text-[18px] sm:text-[20px]">workspace_premium</span>
+        <h3 class="text-base sm:text-[18px] text-slate-900 dark:text-[#dfe2ef] font-semibold">
           Verified Credentials
         </h3>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-3 sm:gap-4">
         {resumeData.certifications.map((cert) => (
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-slate-50 dark:bg-[#1c1f29] rounded border border-slate-200 dark:border-[#1F2937] transition-colors">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 bg-slate-50 dark:bg-[#1c1f29] rounded-lg border border-slate-200 dark:border-[#1F2937] transition-colors">
             <div class="flex flex-col">
-              <span class="font-mono text-[11px] font-semibold text-emerald-600 dark:text-[#4edea3] uppercase">
+              <span class="font-mono text-[10px] sm:text-[11px] font-semibold text-emerald-600 dark:text-[#4edea3] uppercase">
                 {cert.tag}
               </span>
-              <h4 class="text-sm font-semibold text-slate-900 dark:text-[#dfe2ef] mt-0.5">
+              <h4 class="text-xs sm:text-sm font-semibold text-slate-900 dark:text-[#dfe2ef] mt-0.5">
                 {cert.name}
               </h4>
             </div>
@@ -77,7 +77,7 @@ import { resumeData } from '../data/resume';
               href={cert.linkUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="px-3 py-1.5 rounded bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] text-indigo-600 dark:text-[#c0c1ff] hover:border-indigo-500 dark:hover:border-[#8083ff] font-mono text-[13px] shrink-0 flex items-center justify-center gap-1 transition-colors shadow-sm"
+              class="w-full sm:w-auto px-3 py-1.5 rounded bg-white dark:bg-[#181b25] border border-slate-200 dark:border-[#1F2937] text-indigo-600 dark:text-[#c0c1ff] hover:border-indigo-500 dark:hover:border-[#8083ff] font-mono text-xs sm:text-[13px] shrink-0 flex items-center justify-center gap-1 transition-colors shadow-sm text-center"
             >
               <span>{cert.linkLabel}</span>
               <span class="material-symbols-outlined text-[14px]">verified</span>
