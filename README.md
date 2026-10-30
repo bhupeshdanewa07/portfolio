@@ -141,22 +141,6 @@ Simply edit this file; changes automatically propagate to all components with fu
 
 ---
 
-## 🌐 Deployment
-
-Because this project compiles to pure static HTML, CSS, and assets, you can deploy it for free on any modern hosting provider:
-
-### Deploy to GitHub Pages
-1. Push your repository to GitHub.
-2. In your repository settings, navigate to **Pages** > **Build and deployment**.
-3. Select **GitHub Actions** and use the official Astro workflow.
-
-### Deploy to Vercel / Netlify / Cloudflare Pages
-- **Build Command**: `npm run build`
-- **Output Directory**: `dist`
-- **Install Command**: `npm install`
-
----
-
 ## 📬 Contact & Connect
 
 - **Name**: Bhupesh Danewa
